@@ -172,6 +172,7 @@ body {
     border-radius: 6px;
     font-family: inherit;
     font-size: 15px;
+    transition: border-color 0.2s;
 }
 
 .form-group input:focus,
@@ -179,6 +180,24 @@ body {
     outline: none;
     border-color: #1a1a2e;
 }
+
+.form-group input:required:invalid:not(:placeholder-shown),
+.form-group textarea:required:invalid:not(:placeholder-shown)
+ {
+    border-color: #d9534f;
+}
+
+.form-group input:required:valid,
+.form-group textarea:required:valid {
+    border-color: #5cb85c;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.form-hint { color: #777; font-size: 13px; }
 
 .site-footer {
     background-color: #1a1a2e;
